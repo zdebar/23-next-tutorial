@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link"; 
-import "./Header.css";
+import styles from "./Header.module.css";
 
 export default function Header() {
   const [formVisible, setFormVisible] = useState(false);
@@ -31,17 +31,21 @@ export default function Header() {
   };
 
   return (
-    <header>
-      <nav>
-        <Link href="/" className="nav-link">home</Link>
-        <Link href="/blog" className="nav-link">blog</Link>
-        <a href="https://www.linkedin.com/in/your-profile" className="nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="#" className="tooltip" onClick={() => setFormVisible((prev) => !prev)} id="emailAddress">
-          zdebarth@gmail.com
-          <span className="tooltip-text">
-            {formVisible ? "Click to hide contact form" : "Click to reveal contact form"}
-          </span>
-        </a>
+    <header className={styles.header}>
+      <nav className={styles.navbar}>
+        <div className={styles.navright}>
+          <Link href="/" className="tooltip">home</Link>
+          <Link href="/blog" className="tooltip" >blog</Link>
+        </div>
+        <div className={styles.navright}>          
+          <a href="https://www.linkedin.com/in/your-profile" className="tooltip" target="_blank" rel="noopener noreferrer">linkedIn</a>
+          <a href="#" className="tooltip" onClick={() => setFormVisible((prev) => !prev)} id="emailAddress">
+            zdebarth@gmail.com
+            <span className="tooltip-text">
+              {formVisible ? "Click to hide contact form" : "Click to reveal contact form"}
+            </span>
+          </a>
+        </div>
       </nav>
       {formVisible && (
         <section>

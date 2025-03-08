@@ -1,15 +1,15 @@
 import React from 'react';
 import ProjectList from './components/ProjectList';
-import "./homepage.css"
+import styles from "./style/homepage.module.css"
 
 export default function HomePage () {
   return (
     <main>
       <section>
-        <h1 className="title" id='intro'>
+        <h1 className={styles.title} id='intro'>
           <span>Hi, I&apos;m</span> <span>Zdeněk Barth</span>
         </h1>
-        <h1 className="title">
+        <h1 className={styles.title}>
           <span>Full Stack</span> <span>Web Developer</span>
         </h1>
         <br />

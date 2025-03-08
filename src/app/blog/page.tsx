@@ -14,7 +14,7 @@ export default function BlogList() {
   const reversedBlogPosts = [...blogPosts].reverse();
 
   return (
-    <section className="blog-container" id="blog">
+    <main className="blog-container" id="blog">
       {reversedBlogPosts.map((post) => (
         <article key={post.id} className="blog-post">
           <h3>{post.title}</h3>
@@ -32,7 +32,7 @@ export default function BlogList() {
           )}
         </article>
       ))}
-    </section>
+    </main>
   );
 }
 
