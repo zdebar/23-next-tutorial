@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link"; 
 import "./Header.css";
 
 export default function Header() {
@@ -31,12 +32,17 @@ export default function Header() {
 
   return (
     <header>
-      <a href="#" className="tooltip" onClick={() => setFormVisible((prev) => !prev)} id="emailAddress">
-        zdebarth@gmail.com
-        <span className="tooltip-text">
-          {formVisible ? "Click to hide contact form" : "Click to reveal contact form"}
-        </span>
-      </a>
+      <nav>
+        <Link href="/" className="nav-link">home</Link>
+        <Link href="/blog" className="nav-link">blog</Link>
+        <a href="https://www.linkedin.com/in/your-profile" className="nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="#" className="tooltip" onClick={() => setFormVisible((prev) => !prev)} id="emailAddress">
+          zdebarth@gmail.com
+          <span className="tooltip-text">
+            {formVisible ? "Click to hide contact form" : "Click to reveal contact form"}
+          </span>
+        </a>
+      </nav>
       {formVisible && (
         <section>
           <form id="contactForm" action="https://formspree.io/f/xdkazldg" method="POST" onSubmit={handleFormSubmit}>

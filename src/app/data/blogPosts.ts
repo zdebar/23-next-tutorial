@@ -12,7 +12,7 @@ export const blogPosts = [
     id: "1",
     title: "Jak jsem začal s vývojem",
     description: "Příběh o tom, jak jsem se dostal k programování.",
-    date: "2025-02-10",
+    date: "2025-02-02",
     slug: "jak-jsem-zacal",
     content: `Test`,
   },

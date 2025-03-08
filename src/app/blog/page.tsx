@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import ReactMarkdown from "react-markdown"; 
 import { blogPosts } from "../data/blogPosts";
@@ -9,12 +11,14 @@ export default function BlogList() {
     setOpenPostId(openPostId === id ? null : id);
   };
 
+  const reversedBlogPosts = [...blogPosts].reverse();
+
   return (
     <section className="blog-container" id="blog">
-      {blogPosts.map((post) => (
+      {reversedBlogPosts.map((post) => (
         <article key={post.id} className="blog-post">
           <h3>{post.title}</h3>
-          <time dateTime={post.date}>{post.date}</time> 
+          <time dateTime={post.date}>{post.date}</time>
           <p>{post.description}</p>
 
           <button onClick={() => togglePost(post.id)} aria-expanded={openPostId === post.id}>
@@ -31,3 +35,5 @@ export default function BlogList() {
     </section>
   );
 }
+
+
