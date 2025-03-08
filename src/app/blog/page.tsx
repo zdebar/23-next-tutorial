@@ -1,39 +1,26 @@
 "use client";
 
 import { useState } from "react";
-import ReactMarkdown from "react-markdown"; 
 import { blogPosts } from "../data/blogPosts";
+import BlogPost from "./BlogPost";
 
 export default function BlogList() {
   const [openPostId, setOpenPostId] = useState<string | null>(null);
 
   const togglePost = (id: string) => {
-    setOpenPostId(openPostId === id ? null : id);
+    setOpenPostId((prevId) => (prevId === id ? null : id));
   };
 
-  const reversedBlogPosts = [...blogPosts].reverse();
-
   return (
-    <main className="blog-container" id="blog">
-      {reversedBlogPosts.map((post) => (
-        <article key={post.id} className="blog-post">
-          <h3>{post.title}</h3>
-          <time dateTime={post.date}>{post.date}</time>
-          <p>{post.description}</p>
-
-          <button onClick={() => togglePost(post.id)} aria-expanded={openPostId === post.id}>
-            {openPostId === post.id ? "Skrýt" : "Číst více"}
-          </button>
-
-          {openPostId === post.id && (
-            <div>
-              <ReactMarkdown>{post.content}</ReactMarkdown>
-            </div>
-          )}
-        </article>
+    <main>
+      {[...blogPosts].reverse().map((post) => (
+        <BlogPost
+        key={post.id}
+        post={post}
+        isOpen={openPostId === post.id}
+        togglePost={togglePost}
+      />
       ))}
     </main>
   );
 }
-
-

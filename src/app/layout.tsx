@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Ubuntu, Abril_Fatface } from "next/font/google";
 import "./index.css";
-import Header from "@/app/components/Header";
+import Header from "@/app/components/oldHeader";
 import Footer from "@/app/components/Footer";
 
 const ubuntu = Ubuntu({
@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   description: "Zdeněk Barth's personal website",
   keywords: "programování, web development, react, next.js",
   authors: [{ name: "Zdeněk Barth" }],
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1.0,
 };
 
 export default function RootLayout({

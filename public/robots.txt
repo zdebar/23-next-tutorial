@@ -1,0 +1,11 @@
+# Allow all crawlers
+User-agent: *
+Disallow: /private/
+Disallow: /admin/
+
+# Allow a specific crawler (like Googlebot)
+User-agent: Googlebot
+Disallow:
+
+# Crawl delay for all bots (if needed)
+Crawl-delay: 10

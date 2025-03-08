@@ -1,0 +1,10 @@
+.expand {
+  color: white;
+  font-weight: 500;
+  padding: 10px 20px;
+  align-self: flex-end;
+  cursor: pointer;
+  background: linear-gradient(to right, #23ae19, #018f06);
+  border-radius: var(--border-radius);
+  border: none;
+}
