@@ -1,0 +1,9 @@
+.title {
+    white-space: nowrap;
+}
+
+@media (max-width: 560px) {    
+    .title > span {
+        display: block;
+    }    
+}
