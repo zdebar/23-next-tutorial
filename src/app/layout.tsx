@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Ubuntu, Abril_Fatface } from "next/font/google";
 import "./index.css";
-import Header from "@/app/components/oldHeader";
+import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 
 const ubuntu = Ubuntu({
